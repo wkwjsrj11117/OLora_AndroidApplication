@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.team_olora.olora_beta">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- uses-permission android:name="android.permission.LOCAL_MAC_ADDRESS"/ -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!--
+    android:debuggable="false"
+        등록용 sdk 만들 때 필요한 옵션
+    -->
+    <application
+        android:debuggable="false"
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/main_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="HardcodedDebugMode">
+        <activity
+            android:name=".A_Tab1_BtDeviceList"
+            android:label="@string/select_device"
+            android:theme="@android:style/Theme.Holo.Dialog" />
+        <activity
+            android:name=".A_startActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".A_MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name=".A_Tab1Connect" />
+                <action android:name=".A_Tab2Chatlist" />
+                <action android:name=".A_Tab3Friendlist" />
+                <action android:name=".A_Tab4Setting" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".A_Tab2_ChattingRoom"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".A_123_Setting__Activity"
+            android:label="@string/title_activity_list_set"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".Service_btService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".A_Tab4_BlackList"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!-- activity android:name=".Component_4_Popupblack" / -->
+        <activity
+            android:name=".Service_PushPop"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".A_manual"
+            android:label="@string/title_activity_a_manual"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>

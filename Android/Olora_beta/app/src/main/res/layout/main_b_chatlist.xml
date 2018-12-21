@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Tab_Chat"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#88000000"
+    >
+    <RelativeLayout
+        android:id="@+id/LY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorInvisible"
+        >
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_height="wrap_content"
+            android:background="@color/colorInvisible"
+            android:id="@+id/viewChannel"
+            android:textColor="@color/colorWhite"
+            android:typeface="sans"
+            android:paddingRight="10dp"
+            android:text="(채널을 설정해주세요.)"
+            android:textSize="20dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/button_channel"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/arrow_bg" />
+
+            <ImageButton
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/button_discovery"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/reset_bg" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/List_listView"
+        android:layout_below="@+id/LY"
+        style="@style/ListView_Style"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- 선택했을 때 다른화면을 덧씌우는 옵션. 색상줄때 하면될듯 -->
+    </ListView>
+
+    <ExpandableListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tracklist">
+    </ExpandableListView>
+
+    <ImageButton
+        android:id="@+id/dumyCreateChatList"
+        android:layout_alignParentBottom="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorInvisible"/>
+
+</RelativeLayout>
+
